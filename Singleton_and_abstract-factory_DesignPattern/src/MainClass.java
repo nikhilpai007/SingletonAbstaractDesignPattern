@@ -20,7 +20,7 @@ public static void main(String[] args) {
 			doStuff(dtq);
 			
 		} else System.out.print("Enter D, T or Q next time");
-		
+		// changes to checkup on git 
 	}
 			
 	
