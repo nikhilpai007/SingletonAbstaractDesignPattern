@@ -1,6 +1,8 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
+
 
  public class DateFactory
 {
@@ -20,9 +22,11 @@ import java.util.Date;
 		DateFormat dateformat;
 		
 		if(format == 1) {
-			dateformat = new SimpleDateFormat("MM/DD/YYYY");
+			dateformat = new SimpleDateFormat("MM/DD/YYYY'Z'");
+			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
 		}else {
-			dateformat = new SimpleDateFormat("DD-MM-YYYY");
+			dateformat = new SimpleDateFormat("DD-MM-YYYY'Z'");
+			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
 		}
 		Date date = new Date();
 		return dateformat.format(date);

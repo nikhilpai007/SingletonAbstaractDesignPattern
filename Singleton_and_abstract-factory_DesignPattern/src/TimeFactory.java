@@ -1,6 +1,7 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class TimeFactory {
 	private int format = 0; 
@@ -15,9 +16,14 @@ public class TimeFactory {
 	public String getTime() {
 		DateFormat dateformat;
 		if(format == 1) {
-			dateformat = new SimpleDateFormat("HH:MM:SS");
+			dateformat = new SimpleDateFormat("HH:MM:SS'Z'");
+			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
+						
 		}else {
-			dateformat = new SimpleDateFormat("SS,MM,HH");
+			dateformat = new SimpleDateFormat("SS,MM,HH'Z'");
+			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
+			
+			
 		}
 		Date date = new Date();
 		return dateformat.format(date);
