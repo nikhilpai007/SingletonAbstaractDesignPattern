@@ -1,28 +1,32 @@
+import java.time.format.DateTimeFormatter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
-public class MainClass {
-public static void main(String[] args) {
-	
-	//Creating a factory object
-	CreateFactory factory = new CreateFactory();
-	
-	//Date, time or quit object 
-	DTQ dtq = null;
-	
-	Scanner userInput = new Scanner(System.in);
-	
-	System.out.print("Want the current Date(D), Time(T) or Quit the Program (Q) ?");
-	if (userInput.hasNextLine()) {
-		String req = userInput.nextLine();
-		dtq = factory.showdtq(req);
-		
-		if (dtq != null) {
-			doStuff(dtq);
-			
-		} else System.out.print("Enter D, T or Q next time");
-		// changes to checkup on git 1
+ class DateForm
+{
+	private int format = 0;
+		private static DateForm single_instance;
+	public void setFormat(int firstFrom)
+	{
+		format = firstFrom;
 	}
-			
+	private DateForm()
+	{
+		format = 1;
+	}
 	
-}
+	public String getDate(){
+		DateFormat dateformat;
+		
+		if(format == 1) {
+			dateformat = new SimpleDateFormat("MM/DD/YYYY");
+		}else {
+			dateformat = new SimpleDateFormat("DD-MM-YYYY");
+		}
+		
+		Date date = new Date();
+		return dateformat.format(date);
+	}
 }
