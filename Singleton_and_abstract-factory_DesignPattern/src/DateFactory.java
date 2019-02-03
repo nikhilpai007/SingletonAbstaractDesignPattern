@@ -4,15 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
- class DateForm
+ class DateFactory
 {
 	private int format = 0;
-		private static DateForm single_instance;
+		private static DateFactory single_instance;
 	public void setFormat(int firstFrom)
 	{
 		format = firstFrom;
 	}
-	private DateForm()
+	private DateFactory()
 	{
 		format = 1;
 	}
