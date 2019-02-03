@@ -15,6 +15,7 @@ import java.util.Scanner;
 	private DateFactory()
 	{
 		format = 1;
+		
 	}
 	
 	public String getDate(){
@@ -25,7 +26,6 @@ import java.util.Scanner;
 		}else {
 			dateformat = new SimpleDateFormat("DD-MM-YYYY");
 		}
-		
 		Date date = new Date();
 		return dateformat.format(date);
 	}
