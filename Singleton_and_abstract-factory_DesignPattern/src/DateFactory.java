@@ -1,10 +1,8 @@
-import java.time.format.DateTimeFormatter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
- class DateFactory
+ public class DateFactory
 {
 	private int format = 0;
 		private static DateFactory single_instance;
@@ -28,5 +26,11 @@ import java.util.Scanner;
 		}
 		Date date = new Date();
 		return dateformat.format(date);
+	}
+	
+	public static DateFactory getInstance() {
+		if(single_instance == null)
+			single_instance = new DateFactory();
+		return single_instance;
 	}
 }
