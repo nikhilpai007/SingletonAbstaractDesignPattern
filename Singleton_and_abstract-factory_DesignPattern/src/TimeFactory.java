@@ -11,19 +11,19 @@ public class TimeFactory {
 	}
 	private TimeFactory(){
 		format = 1;
-		format = 2;
 	}
 	
 	public String getTime() {
-		DateFormat dateformat = null;
+		DateFormat dateformat;
 		if(format == 1) {
-			dateformat = new SimpleDateFormat("HH:MM:SS'Z'");
+			dateformat = new SimpleDateFormat("HH:MM:SS");
 			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
 						
-		}else if (format == 2) {
-			dateformat = new SimpleDateFormat("SS,MM,HH'Z'");
+		}else {
+			dateformat = new SimpleDateFormat("SS,MM,HH");
 			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
-				
+			
+			
 		}
 		Date date = new Date();
 		return dateformat.format(date);

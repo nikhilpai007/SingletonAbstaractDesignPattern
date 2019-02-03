@@ -8,6 +8,10 @@ public class MainClass {
 		DateFactory D = DateFactory.getInstance(); //created Date Object
 		TimeFactory T = TimeFactory.getInstance(); //created Time Object
 		
+		System.out.println("****************************************************************");
+		System.out.println("**********COIS 3040 - Software Architecture and Design**********");
+		System.out.println("******Use of Abstract Factory and Singleton Design Pattern******");
+		System.out.println("****************************************************************");
 		System.out.println("Select Format as 1 or 2 \n  Format 1 : MM/DD/YYYY; HH:MM:SS  \n  Format 2: DD-MM-YYYY; SS,MM,HH");
 		input = new Scanner(System.in);
 		

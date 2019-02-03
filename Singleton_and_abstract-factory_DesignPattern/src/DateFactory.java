@@ -15,18 +15,17 @@ import java.util.TimeZone;
 	private DateFactory()
 	{
 		format = 1;
-		format = 2;
 		
 	}
 	
 	public String getDate(){
-		DateFormat dateformat = null;
+		DateFormat dateformat;
 		
 		if(format == 1) {
-			dateformat = new SimpleDateFormat("MM/DD/YYYY'Z'");
+			dateformat = new SimpleDateFormat("MM/DD/YYYY");
 			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
-		}else if (format == 2) {
-			dateformat = new SimpleDateFormat("DD-MM-YYYY'Z'");
+		}else {
+			dateformat = new SimpleDateFormat("DD-MM-YYYY");
 			dateformat.setTimeZone(TimeZone.getTimeZone("EST"));
 		}
 		Date date = new Date();
