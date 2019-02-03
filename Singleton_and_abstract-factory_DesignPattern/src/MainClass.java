@@ -15,14 +15,16 @@ public class MainClass {
 		D.setFormat(format);
 		T.setFormat(format);
 		
-		while(true) {
+		while (true) {
 			System.out.println("Select D for Date \n Select T for Time \n Select Q to Quit the program");
 			String DTfactory = input.nextLine();
 			
 			if(DTfactory.equals("D")) {
 				System.out.println("Date:" +D.getDate());
+				
 			}else if(DTfactory.equals("T")) {
 				System.out.println("Time:" +T.getTime());
+				
 			}else if (DTfactory.equals("Q")) {
 				System.out.println("End of program, run again to try");
 				break;
